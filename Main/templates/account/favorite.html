@@ -1,0 +1,107 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/favorite.css' %}">
+
+<div class="container favorite-container">
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <div class="list-group ">
+                <a href="{% url 'account:dashboard' %}" class="list-group-item list-group-item-action">My Account</a>
+                <a href="{% url 'account:membership' %}" class="list-group-item list-group-item-action">Membership</a>
+                <a href="{% url 'account:favorite' %}"
+                    class="list-group-item list-group-item-action active">Favorites</a>
+                <a href="{% url 'account:settings' %}" class="list-group-item list-group-item-action">Settings</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-uppercase">Favorites</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row no-fav">
+                        <div class="col-md-12">
+                            <div class="row no-gutters">
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 star-icon align-self-center">
+                                    <i style="font-size: 60px;" class="fas fa-star text-warning"></i>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 fav-text">
+                                    <h4 class="mobile-ad-text mobile-no-ad">You haven't marked any ads as favorite yet.</h4>
+                                    <p class="text-muted py-2">Click on the star symbol on any ad to save it as a favorite.</p>
+                                    <p class="text-muted">Start to <a href="#">browse ads</a> to find ads you would like to favorite.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="has-fav mb-3">
+                        <div class="ads-positive">
+                            <h5 class="mb-3">Your Favorites</h5>
+                            <div class="prod-row">
+                                <div class="prod-cards bg-white">
+                                    <div class="prod-images">
+                                        <span
+                                            class="featured text-uppercase bg-warning text-dark font-weight-bold">Featured</span>
+                                        <img src="{% static 'products/mobile1.jpg' %}" alt="">
+                                        <span class="heart"><i class="fas fa-heart text-dark"></i></span>
+                                    </div>
+                                    <div class="titles px-3">
+                                        <p class="font-weight-bold prod-title mb-1 price">50000 Tk</p>
+                                        <p class="text-muted prod-title">Mobile-1</p>
+                                        <div class="place-text text-muted py-2">
+                                            <span>Mirpur, Dhaka</span>
+                                            <span class="float-right">Dec 31</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="prod-cards bg-white">
+                                    <div class="prod-images">
+                                        <span
+                                            class="featured text-uppercase bg-warning text-dark font-weight-bold">Featured</span>
+                                        <img src="{% static 'products/mobile1.jpg' %}" alt="">
+                                        <span class="heart"><i class="fas fa-heart text-dark"></i></span>
+                                    </div>
+                                    <div class="titles px-3">
+                                        <p class="font-weight-bold prod-title mb-1 price">55000 Tk</p>
+                                        <p class="text-muted prod-title">Mobile-1</p>
+                                        <div class="place-text text-muted py-2">
+                                            <span>Mirpur, Dhaka</span>
+                                            <span class="float-right">Dec 31</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="prod-cards bg-white">
+                                    <div class="prod-images">
+                                        <span
+                                            class="featured text-uppercase bg-warning text-dark font-weight-bold">Featured</span>
+                                        <img src="{% static 'products/mobile1.jpg' %}" alt="">
+                                        <span class="heart"><i class="fas fa-heart text-dark"></i></i></span>
+                                    </div>
+                                    <div class="titles px-3">
+                                        <p class="font-weight-bold prod-title mb-1 price">50000 Tk</p>
+                                        <p class="text-muted prod-title">Mobile-1</p>
+                                        <div class="place-text text-muted py-2">
+                                            <span>Mirpur, Dhaka</span>
+                                            <span class="float-right">Dec 31</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+.settings-container {
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+
+.user-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+    .settings-container {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+}

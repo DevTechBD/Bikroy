@@ -1,0 +1,44 @@
+.post_ad-container {
+    margin-top: 120px;
+    margin-bottom: 500px;
+}
+
+.category-card {
+    position: relative;
+}
+
+.cat-items {
+    z-index: 1;
+}
+
+.dropped-menu {
+    padding: 0!important;
+}
+
+.cat-drop-right {
+    position: relative;
+}
+
+.cat-title {
+    line-height: 1.8em;
+}
+
+.cat-icon-right {
+    margin: 0;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 767px) {
+    .cat-title {
+        display: block;
+        margin-top: 2px; 
+    }
+    .cat-drop-right {
+        font-size: 14px;
+        text-align: center;
+    }
+}

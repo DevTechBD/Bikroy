@@ -1,0 +1,66 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+
+<div class="container settings-container">
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <div class="list-group ">
+                <a href="{% url 'account:dashboard' %}" class="list-group-item list-group-item-action">My Account</a>
+                <a href="{% url 'account:membership' %}" class="list-group-item list-group-item-action">Membership</a>
+                <a href="{% url 'account:favorite' %}" class="list-group-item list-group-item-action">Favorites</a>
+                <a href="{% url 'account:settings' %}"
+                    class="list-group-item list-group-item-action active">Settings</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-uppercase">Settings</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 member-card-text">
+                            <form action="" method="POST">{% csrf_token %}
+                                <div class="form-group">
+                                    <div class="user-image text-center">
+                                        <img class="border border-dark rounded-circle user-img" src="{% static 'users/default-user.webp' %}" alt="">
+                                        <input class="form-control-file my-3 btn btn-primary" type="file" id="img" name="img" accept="image/*">
+                                    </div>
+                                    <p class="font-weight-bold">Username: <span class="text-muted">Max</span></p>
+                                    <p class="font-weight-bold">Account No: <span class="text-muted">1234</span></p>
+                                    <label class="font-weight-bold" for="full_name">Full Name</label>
+                                    <input type="text" class="form-control mb-2" id="full_name" name="full_name"
+                                        value="Max Born">
+                                    <label class="font-weight-bold mt-2" for="email">Email</label>
+                                    <input type="email" class="form-control mb-2" id="email" name="email"
+                                        value="max@gmail.com" aria-describedby="emailHelp">
+                                    <label class="font-weight-bold mt-2" for="phone">Phone No.</label>
+                                    <input type="tel" class="form-control mb-2" id="phone" name="phone"
+                                        value="0192473510">
+
+                                    <input type="submit" class="btn btn-dark my-3" value="Update Details">
+
+                                    <hr>
+                                </div>
+                            </form>
+                            <form action="">
+                                <button class="btn btn-danger">Log Out</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "HomeScreen/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<section class="Form mx-5">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <img src="{% static 'images/register.png' %}" class="img-fluid img-border mt-md-5 ml-md-3" alt="">
+            </div>
+            <div class="col-md-7 px-5 py-5">
+                <h2 class="font-weight-bold py-3 text-center register-title">SIGN UP</h2>
+                <h4 class="text-center sign-in-text">Create An Account</h4>
+                <form action="">
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0 mt-3">Username</p>
+                            <input type="text" class="form-control my-2 p-4" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0 mt-3">Email</p>
+                            <input type="email" class="form-control my-2 p-4" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0 mt-3">Password</p>
+                            <input type="password" class="form-control my-2 p-4" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0 mt-3">Confirm Password</p>
+                            <input type="password" class="form-control my-2 p-4" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <input type="submit" class="login-btn bg-dark text-white my-2" value="Sign Up">
+                        </div>
+                    </div>
+                    <p class="text-center p-link mt-3">Already have an account! <a href="#">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

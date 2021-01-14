@@ -1,0 +1,44 @@
+{% extends "HomeScreen/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<section class="Form mx-5"> 
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <img src="{% static 'images/login.png' %}" class="img-fluid img-border mt-md-4 ml-md-3" alt="">
+            </div>
+            <div class="col-md-7 px-5 py-5">
+                <h2 class="login-title font-weight-bold py-3 text-center">SIGN IN</h2>
+                <h4 class="text-center sign-in-text">Sign Into Your Account</h4>
+                <form action="">
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0 mt-3">Email</p>
+                            <input type="email" class="form-control my-2 p-4" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <p class="font-weight-bold mb-0">Password</p>
+                            <input type="password" class="form-control my-2 p-4" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-7">
+                            <input type="submit" class="login-btn bg-dark text-white my-2" value="Sign In">
+                        </div>
+                    </div>
+                    <p class="text-center mt-3 p-link"><a href="#">Forgot Password</a></p>
+                    <p class="text-center p-link">Don't have an account? <a href="{% url 'Register' %}">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

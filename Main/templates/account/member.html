@@ -1,0 +1,45 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/member.css' %}">
+
+<div class="container member-container">
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <div class="list-group ">
+                <a href="{% url 'account:dashboard' %}" class="list-group-item list-group-item-action">My Account</a>
+                <a href="{% url 'account:membership' %}" class="list-group-item list-group-item-action active">Membership</a>
+                <a href="{% url 'account:favorite' %}" class="list-group-item list-group-item-action">Favorites</a>
+                <a href="{% url 'account:settings' %}" class="list-group-item list-group-item-action">Settings</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-uppercase">My Membership</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 member-card-text">
+                            <span style="font-size: 60px;" class="iconify shop-icon" data-icon="flat-color-icons:shop"
+                                data-inline="false"></span> <span class="be-member">Become a Bikroy Member</span>
+                            <p class="text-muted my-3">Memberships give your business a voice and presence on bikroy, to reach more customers,
+                                increase your sales and expand your business! Memberships unlock powerful tools like
+                                sales analytics, a dedicated business page and discounted ad promotions.</p>
+                            <a href="#"><button class="btn btn-success">Learn More</button></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

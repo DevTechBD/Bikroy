@@ -1,0 +1,536 @@
+{% extends "HomeScreen/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="container my-4 main-content">
+    <div class="row mb-4">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-6">
+            <div class="vertical-center">
+                <h4 class="font-weight-bold title-line-height">Welcome to Site Title.com - the largest marketplace in
+                    Bangladesh!</h4>
+                <p class="my-4">Buy and sell everything from used cars to mobile phones and computers, or search for
+                    property, jobs and more in Bangladesh!</p>
+                <div class="main">
+                    <form action="" method="GET">
+                        <input class="searchBx" type="text" name="search" placeholder="What are you looking for?">
+                        <button class="btn btn-success search-btn" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-6">
+            <img class="d-block mx-auto hero-img" src="{% static 'images/bg.png' %}" alt="Hero Img">
+        </div>
+    </div>
+
+
+    <h4 class="font-weight-bold mt-5">Pick Your Location Below <i class="fas fa-arrow-down"></i></h4>
+    <hr>
+    <div class="row mt-5">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-4">
+            <h5 class="text-center font-weight-bold">Cities</h5>
+            <ul class="list-group list-group-flush cities">
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Dhaka</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Chattagram</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Sylhet</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Khulna</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Barishal</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Rajshahi</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Rangpur</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Mymensingh</a></li>
+            </ul>
+        </div>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-4 bd-svg-col">
+            <img class="bd-svg d-block mx-auto" src="{% static 'images/bd.svg' %}" alt="BD SVG">
+        </div>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-4">
+            <h5 class="text-center font-weight-bold division">Divisions</h5>
+            <ul class="list-group list-group-flush divisions">
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Dhaka Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Chattagram Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Sylhet Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Khulna Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Barishal Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Rajshahi Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Rangpur Division</a></li>
+                <li class="list-group-item py-1"><a class="text-decoration-none" href="#">Mymensingh Division</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row card-safety-block">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 card-safety-text">
+            <div data-aos="fade-right" class="card py-2">
+                <div class="row no-gutters">
+                    <div class="col-md-2 align-self-center text-center">
+                        <img class="protect-image" src="{% static 'images/protect-image.webp' %}" class="card-img"
+                            alt="...">
+                    </div>
+
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <p class="card-text font-weight-bold">Stay safe while trading!</p>
+                            <p class="card-text card-home-safety"><small class="text-muted">All ads are manually
+                                    reviewed by our team for your safety. Read our tips on how to make safe
+                                    deals.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 align-self-center">
+            <a class="text-decoration-none" href="#">
+                <div data-aos="flip-right" class="card p-4" id="fb-like-shadow">
+                    <div class="like-facebook" style="display: inline">
+                        <div class="fb-like-text">
+                            <i class="fab fa-facebook-square text-primary align-middle" style="font-size: 30px;"></i>
+                            <span class="text-primary ml-2 font-weight-bold">Like us on Facebook</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <h4 class="font-weight-bold mt-5 mb-3">Our Categories</h4>
+    <ul class="nav nav-tabs py-2" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="top-tab" data-toggle="tab" href="#top" role="tab" aria-controls="top"
+                aria-selected="true">Top Categories</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all"
+                aria-selected="false">All Categories</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="top" role="tabpanel" aria-labelledby="top-tab">
+            <div class="row mt-5">
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="emojione:mobile-phone" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Mobiles</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(86,284)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell new and used mobiles, SIM cards and other mobile accessories in
+                                Bangladesh.
+                                Choose from
+                                top brands including Apple, OnePlus, Xiaomi and Nokia.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-tv text-danger" style="font-size: 40px;"></i>
+                                <p class="mb-0 font-weight-bold">Electronics</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(81,343)</small></p>
+                        <p>
+                            <small>
+                                Find great deals for used electronics in Bangladesh including mobile phones,
+                                computers, laptops, TVs, cameras and much more.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-faucet text-danger" style="font-size: 40px;"></i>
+                                <p class="mb-0 font-weight-bold">Home & Living</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(35,201)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell new and used home appliances including furniture, kitchen items, gardening
+                                products and other items for your garden.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="noto-v1:sport-utility-vehicle" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Vehicles</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(29,322)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell used cars, motorbikes and other vehicles in Bangladesh. Choose from top
+                                brands including Toyota, Nissan, Honda and Suzuki.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify text-danger" data-icon="bx:bxs-watch-alt" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Fashion & Beauty</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(16,842)</small></p>
+                        <p>
+                            <small>
+                                Search from the widest variety of pets in Bangladesh. Select from dogs, puppies, cats,
+                                kittens, birds and other domesticated animals.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="flat-color-icons:home" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Property</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(16,290)</small></p>
+                        <p>
+                            <small>
+                                View listings for property in Bangladesh. Find the cheapest rates for apartments,
+                                commercial and residential properties, as well as for land and plots.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="flat-color-icons:briefcase" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Jobs</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(925)</small></p>
+                        <p>
+                            <small>
+                                Post and apply for jobs and career opportunities in Bangladesh. Search for job vacancies
+                                in your city.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+            <div class="row mt-5">
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="emojione:mobile-phone" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Mobiles</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(86,284)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell new and used mobiles, SIM cards and other mobile accessories in
+                                Bangladesh.
+                                Choose from
+                                top brands including Apple, OnePlus, Xiaomi and Nokia.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-tv text-danger" style="font-size: 40px;"></i>
+                                <p class="mb-0 font-weight-bold">Electronics</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(81,343)</small></p>
+                        <p>
+                            <small>
+                                Find great deals for used electronics in Bangladesh including mobile phones,
+                                computers, laptops, TVs, cameras and much more.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-faucet text-danger" style="font-size: 40px;"></i>
+                                <p class="mb-0 font-weight-bold">Home & Living</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(35,201)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell new and used home appliances including furniture, kitchen items, gardening
+                                products and other items for your garden.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="noto-v1:sport-utility-vehicle" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Vehicles</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(29,322)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell used cars, motorbikes and other vehicles in Bangladesh. Choose from top
+                                brands including Toyota, Nissan, Honda and Suzuki.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify text-danger" data-icon="bx:bxs-watch-alt" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Fashion & Beauty</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(16,842)</small></p>
+                        <p>
+                            <small>
+                                Search from the widest variety of pets in Bangladesh. Select from dogs, puppies, cats,
+                                kittens, birds and other domesticated animals.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify text-danger" data-icon="emojione-v1:cat" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Pets & Animals</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(86,284)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell new and used mobiles, SIM cards and other mobile accessories in
+                                Bangladesh.
+                                Choose from
+                                top brands including Apple, OnePlus, Xiaomi and Nokia.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="flat-color-icons:home" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Property</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(16,290)</small></p>
+                        <p>
+                            <small>
+                                View listings for property in Bangladesh. Find the cheapest rates for apartments,
+                                commercial and residential properties, as well as for land and plots.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="noto:soccer-ball" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Hobbies, Sports & Kids</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(8,154)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell used musical instruments, sports gear and accessories, art and collectibles
+                                and items for kids here.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-user-graduate text-danger" style="font-size: 40px;"></i>
+                                <p class="mb-0 font-weight-bold">Education</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(3,945)</small></p>
+                        <p>
+                            <small>
+                                Buy and sell books and magazines, find tuition, classes and other educational resources
+                                in Bangladesh.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify text-danger" data-icon="fe:kitchen-cooker" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Essentials</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(3,621)</small></p>
+                        <p>
+                            <small>
+                                Find daily essential products, including groceries, healthcare products, household
+                                items, fruits & vegetables, meat & seafood and baby products near you.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="emojione:factory" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Business & Industry</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(2,806)</small></p>
+                        <p>
+                            <small>
+                                This is where businesses in Bangladesh trade, numerous business and industry services
+                                offered to trade and consumers.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="flat-color-icons:briefcase" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Jobs</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(925)</small></p>
+                        <p>
+                            <small>
+                                Post and apply for jobs and career opportunities in Bangladesh. Search for job vacancies
+                                in your city.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify" data-icon="noto:toolbox" data-inline="false"
+                                    style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Services</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(898)</small></p>
+                        <p>
+                            <small>
+                                Browse through a range of service offerings to businesses and consumers alike.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <span class="iconify text-success" data-icon="carbon:agriculture-analytics"
+                                    data-inline="false" style="font-size: 40px;"></span>
+                                <p class="mb-0 font-weight-bold">Agriculture</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(686)</small></p>
+                        <p>
+                            <small>
+                                Find agricultural products, including fresh crop seeds, plants and fertilizers in
+                                Bangladesh.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="all-categories-list">
+                                <i class="fas fa-business-time text-danger" style="font-size: 30px;"></i>
+                                <p class="mb-0 font-weight-bold">Overseas Jobs</p>
+                            </div>
+                        </a>
+                        <p class="text-muted mb-1"><small>(55)</small></p>
+                        <p>
+                            <small>
+                                Apply for overseas jobs, browse a range of quality international job vacancies in your
+                                dream location.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="zoom-in" class="my-5 text-center">
+        <h4>Do you have something to sell?</h4>
+        <h5>Post your ad below!</h5>
+        <p><span class="iconify" data-icon="bytesize:arrow-bottom" data-inline="false" style="font-size: 40px;"></span>
+        </p>
+        <a class="btn btn-warning font-weight-bold" href="#">Post Your AD Now</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script src="{% static 'js/home.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 500
+    });
+</script>
+{% endblock %}

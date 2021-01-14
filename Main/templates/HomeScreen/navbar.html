@@ -1,0 +1,23 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<nav id="navbar">
+    <div class="logo">
+        <h4>SITE TITLE</h4>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">All ADs</a></li>
+        <li><a href="#"><i class="far fa-comments"></i> Chat</a></li>
+        <li><a href="{% url 'Login' %}"><i class="fas fa-user"></i> Log In</a></li>
+        <li><a class="btn btn-warning text-dark font-weight-bold p-2 btn-header" href="#">POST YOUR AD</a></li>
+    </ul>
+
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>
+
+<script src="{% static 'js/navbar.js' %}"></script>
